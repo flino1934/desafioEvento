@@ -29,5 +29,17 @@ public class EventoService {
 		return obj.get();
 
 	}
+	
+	public void save(Evento theEvento) {
+		
+		eventoRepository.save(theEvento);
+		
+	}
+	
+	public void deleteById(int id) {
+		
+		eventoRepository.deleteById(id);
+		
+	}
 
 }

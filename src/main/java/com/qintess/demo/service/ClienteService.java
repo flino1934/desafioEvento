@@ -29,5 +29,17 @@ public class ClienteService {
 		return obj.get();
 
 	}
+	
+	public void save(Cliente theCliente) {
+		
+		clienteRepository.save(theCliente);
+		
+	}
+	
+	public void deleteById(int theId) {
+		
+		clienteRepository.deleteById(theId);
+		
+	}
 
 }

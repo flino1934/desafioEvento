@@ -30,4 +30,18 @@ public class CasaDeShowService {
 
 	}
 
+	public void save(CasaDeShow theCasaDeShow) {
+
+		casaDeShowRepository.save(theCasaDeShow);
+
+	}
+
+	
+	
+	public void deleteById(int theId) {
+
+		casaDeShowRepository.deleteById(theId);
+
+	}
+
 }

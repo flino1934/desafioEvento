@@ -18,6 +18,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "event")
 public class Evento {
@@ -43,11 +45,13 @@ public class Evento {
 	@Column(name = "event_description")
 	private String descricaoEvento;
 
+
 	@ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH,
 			CascadeType.REFRESH })
 	@JoinTable(name = "eventos_clientes", joinColumns = @JoinColumn(name = "evento_id"), inverseJoinColumns = @JoinColumn(name = "cliente_id"))
 	private List<Cliente> clientes;
 
+	@JsonIgnore
 	@ManyToOne(cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH })
 	@JoinTable(name = "concert_hall_id_evento_id", joinColumns = @JoinColumn(name = "evento_id"), inverseJoinColumns = @JoinColumn(name = "concert_hall_id"))
 	private CasaDeShow casaDeShow;
@@ -154,7 +158,7 @@ public class Evento {
 
 	}
 
-	//ultima atualização 
+	// ultima atualização
 
 	public void addIngresso(Ingresso theIngresso) {
 
@@ -162,9 +166,7 @@ public class Evento {
 
 			System.out.println("Erro");
 
-		}  else  {
-			
-		 
+		} else {
 
 			if (ingressos == null) {
 
@@ -178,6 +180,5 @@ public class Evento {
 		}
 
 	}
-
 
 }

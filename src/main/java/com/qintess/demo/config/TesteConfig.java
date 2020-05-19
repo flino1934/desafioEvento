@@ -48,7 +48,7 @@ public class TesteConfig implements CommandLineRunner {
 		// sozinho
 
 		CasaDeShow casaDeShow = new CasaDeShow("Casa de eventos Morumbi", "11-704-190", "Rua carlos gomes", 120,"Espaço de médio porte para palestras e reuniões", 230.0);
-		CasaDeShow casaDeShow2 = new CasaDeShow("Casa de shows do MAranhão", "11-704-190", "Rua  gomes", 1200,
+		CasaDeShow casaDeShow2 = new CasaDeShow("Casa de shows do Maranhão", "11-704-190", "Rua  gomes", 1200,
 				"Espaço para shows", 230.0);
 		
 		

@@ -30,4 +30,16 @@ public class IngressoService {
 
 	}
 
+	public void save(Ingresso theIngresso) {
+
+		ingressoRepository.save(theIngresso);
+
+	}
+
+	public void deleteById(int id) {
+
+		ingressoRepository.deleteById(id);
+
+	}
+
 }

@@ -10,6 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Ingresso {
 
@@ -23,6 +25,7 @@ public class Ingresso {
 
 	// acabei de colocar
 
+	@JsonIgnore
 	@ManyToOne(cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH })
 	@JoinTable(name = "evento_ingresso", joinColumns = @JoinColumn(name = "ingresso_id"), inverseJoinColumns = @JoinColumn(name = "evento_id"))
 	private Evento evento;
